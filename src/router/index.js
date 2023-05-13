@@ -55,6 +55,20 @@ export const constantRoutes = [
     }]
   },
 
+  
+  {
+    path: '/textTooltip',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Form',
+        component: () => import('@/views/textTooltip/index'),
+        meta: { title: '文字提示器', icon: 'form' }
+      }
+    ]
+  },
+
   {
     path: '/example',
     component: Layout,
@@ -149,16 +163,6 @@ export const constantRoutes = [
     ]
   },
 
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
-  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
